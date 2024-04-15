@@ -20,7 +20,14 @@ class Estudantes
 }
 
 
-const Estudante1 = new Estudantes("Joao", "joao.com", 10, ["Matematica", "Portugues"])
+const Estudante1 = new Estudantes("Joao", "joao@gmail.com", 10, ["Matematica", "Portugues"])
+const Estudante2 = new Estudantes("Abacate", "fu@gmail.com", 10, ["Historia", "Portugues", "Ingles", "Geografia"])
 
-console.log(Estudante1.primeiraDisciplina())
-console.log(Estudante1.ultimaDisciplina())
+const lista = [Estudante1, Estudante2]
+
+for(estudante of lista)
+{
+    console.log(estudante.primeiraDisciplina())
+    console.log(estudante.ultimaDisciplina())
+    console.log("\n")
+}
