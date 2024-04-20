@@ -9,7 +9,6 @@ const rl = readline.createInterface({
     output: process.stdout,
   });
 
-
 rl.question("Digite o código de uma moeda: ", (res) => {
     getMoedaDados(response, res)
     rl.close();
@@ -21,6 +20,7 @@ async function getMoedaDados(api, b) {
     const dia = dataUpdate.toLocaleDateString("pt-BR");
     const hora = dataUpdate.toLocaleTimeString("pt-BR");
     const moeda = dados.rates[b];
+    let calc = moeda != "BRL" && moeda != "listar" ? dados.rates["BRL"] / dados.rates[b] : dados.rates[b];
 
-    console.log(`A cotação do dia ${dia} às ${hora} foi ${moeda}`);
+    console.log(`A cotação do dia ${dia} às ${hora} foi ${calc}`);
 }
